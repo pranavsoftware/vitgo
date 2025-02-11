@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <link rel="stylesheet" href="../FeedBack/feedback_hidden.css">
+    <script type="module" src="../FeedBack/feedback.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../assets/logo (1).png" alt="Company Logo">
+            <h1>Easycab</h1>
+        </div>
+    </header>
+
+    <main>
+        <h2>Feedback Form😃</h2>
+        <form id="feedbackForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" required placeholder="Registered Email ID">
+
+            <label for="rating">Rating:</label>
+            <select id="rating" required>
+                <option value="" disabled selected>Select your rating</option>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select>
+
+            <label for="message">Message (optional):</label>
+            <textarea id="message"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/easy_cab24.7?igsh=bmxvcDZzcDdoMGFi">Instagram</a> | <a href="https://www.linkedin.com/company/easycab-24-7/?viewAsMember=true">LinkedIn</a>
+          </div>
+          <p>&copy; 2024 Easycab. All Rights Reserved.</p>
+    </footer>
+
+    <div id="popup" class="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <div class="popup-content">
+            <img src="../assets/smile.jpeg" alt="Thank You" />
+            <p>Thank you for submitting!</p>
+        </div>
+    </div>
+</body>
+</html>

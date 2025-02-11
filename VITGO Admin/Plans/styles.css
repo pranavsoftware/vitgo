@@ -1,0 +1,376 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* Spinner (Preloader) */
+.spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+}
+
+.spinner.active {
+    visibility: visible;
+}
+
+.spinner video {
+    max-width: 80%;
+    max-height: 50%;
+    margin-bottom: 20px;
+}
+
+.loading-text {
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+/* General Header Styles */
+header {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.go-back {
+    background-color: #ff5722;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.go-back:hover {
+    background-color: #e64a19;
+}
+
+/* Main Content Styling */
+main {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: auto;
+    flex: 1;
+    /* Allows content to expand and take available space */
+}
+
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#searchBar {
+    width: 80%;
+    max-width: 600px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.post-plan-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 2px 0;
+    font-size: 14px;
+    margin-top: auto;
+    /* Push footer to bottom */
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background-color: #000000;
+    padding-top: 60px;
+    color: #e0e0e0;
+    transition: left 0.4s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    cursor: pointer;
+}
+
+.sidebar .close-btn:hover {
+    color: #ff6666;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 12px 25px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li:hover {
+    background-color: #41464b;
+}
+
+.sidebar ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar ul li a:hover {
+    color: #ffffff;
+}
+
+/* General Menu Button Style */
+.menu-btn {
+    background-color: #ffffff;
+    /* White background */
+    color: #007bff;
+    /* Blue text */
+    border: 2px solid #007bff;
+    /* Blue border */
+    border-radius: 5px;
+    padding: 10px 15px;
+    /* Match padding of logout button */
+    font-size: 12.5px;
+    /* Match font size of logout button */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    text-align: center;
+    display: inline-block;
+    width: auto;
+    box-sizing: border-box;
+    /* Ensures padding doesn't affect the button size */
+}
+
+/* Hover effect */
+.menu-btn:hover {
+    background-color: #007bff;
+    /* Blue background on hover */
+    color: #ffffff;
+    /* White text on hover */
+    border-color: #0056b3;
+    /* Darker blue border on hover */
+}
+
+/* Focus effect (optional for accessibility) */
+.menu-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+    /* Blue focus ring */
+}
+
+/* Active state */
+.menu-btn:active {
+    background-color: #0056b3;
+    /* Darker blue when clicked */
+    border-color: #003366;
+    /* Even darker border on active */
+}
+
+/* Mobile View - Adjustments for consistency */
+@media (max-width: 768px) {
+    .menu-btn {
+        font-size: 12.5px;
+        /* Match font size for tablet */
+        padding: 10px 15px;
+        /* Match padding */
+    }
+}
+
+/* Mobile Devices and Small Screens */
+@media (max-width: 480px) {
+    .menu-btn {
+        font-size: 12.5px;
+        /* Match font size for mobile */
+        padding: 10px 15px;
+        /* Match padding */
+    }
+}
+
+
+/* Responsive Design */
+
+/* Tablets and Medium Screens */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .go-back {
+        margin-top: 10px;
+    }
+
+    #searchBar {
+        width: 90%;
+    }
+
+    .spinner video {
+        width: 50%;
+    }
+
+    .menu-btn {
+        font-size: 14px;
+        padding: 8px 18px;
+    }
+}
+
+/* Mobile Devices and Small Screens */
+@media (max-width: 480px) {
+    .spinner video {
+        width: 70%;
+    }
+
+    .loading-text {
+        font-size: 1.2em;
+    }
+
+    .menu-btn {
+        font-size: 23px;
+        padding: 5px 16px;
+        width: 25%;
+    }
+
+    .sidebar {
+        width: 220px;
+    }
+
+    .header-container .logo {
+        display: flex;
+        flex-direction: row; /* Align logo and text horizontally */
+        align-items: center; /* Center the text vertically with the logo */
+        text-align: left; /* Align text to the left */
+    }
+
+    .header-container .logo img {
+        height: 60px; /* Adjust the size as needed */
+        margin-right: 10px; /* Add space between the logo and text */
+    }
+
+    .header-container .logo span {
+        font-size: 20px; /* Font size for the text */
+        font-weight: bold; /* Make the text bold for emphasis */
+        color: #ffffff; /* Ensure text color matches the design */
+    }
+
+    .go-back {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    /* Adjusting for mobile layout */
+    header {
+        flex-direction: column;  /* Stack items vertically */
+        text-align: center;  /* Center content */
+        padding: 10px 20px;
+    }
+
+    .menu-btn {
+        display: block;
+        width: 100%;  /* Make menu button take full width */
+        margin-top: 10px;  /* Space between logo/company name and button */
+        padding: 12px 0;  /* Adjust padding for larger tap area */
+        font-size: 16px;  /* Larger font for easier reading */
+    }
+
+    .go-back {
+        margin-top: 15px;
+    }
+}

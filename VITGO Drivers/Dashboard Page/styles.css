@@ -1,0 +1,190 @@
+/* Reset and basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    background-color: #000000;
+    color: #fff;
+}
+
+header .logo {
+    width: 75px;
+    height: 60px;
+    margin-right: 10px; /* Add space between logo and text */
+}
+
+header h1 {
+    font-size: 3vw; /* Make the text responsive based on viewport width */
+    margin: 0; /* Remove margin to prevent shifting */
+    flex-grow: 1; /* Allow the header text to take remaining space */
+}
+
+/* Menu button */
+header .menu-btn {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #1d1d1d;
+    color: #fff;
+    padding-top: 60px;
+    transform: translateX(-250px);
+    transition: transform 0.3s ease;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: #333;
+}
+
+/* Main content styling */
+.main-content {
+    margin-left: 260px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 4%;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+/* Styling for QR code */
+#qrcode {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Responsive styling for smaller devices */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 6vw; /* Adjust font size for tablet */
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .card-container {
+        margin-top: 15px;
+    }
+
+    .card {
+        padding: 15px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 8vw; /* Adjust font size for mobile */
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+}
+
+/* Footer styling */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #000000;
+    color: white;
+    font-size: 14px;
+}

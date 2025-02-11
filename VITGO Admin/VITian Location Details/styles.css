@@ -1,0 +1,258 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+header .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+header img.logo {
+    height: 55px;
+    margin-right: -735px;
+}
+
+header span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header .go-back-btn {
+    background-color: #ff4d4d;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+header .go-back-btn:hover {
+    background-color: #e43f3f;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    background-color: white;
+    margin-top: 10px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #333;
+    color: white;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+#map {
+    height: 300px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #ff4d4d;
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #e43f3f;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Mobile Responsiveness */
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    header img.logo {
+        height: 50px;
+        margin-right: -135px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    table th,
+    table td {
+        padding: 8px;
+    }
+
+    .popup-content {
+        width: 95%;
+    }
+
+    #map {
+        height: 250px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    table th,
+    table td {
+        padding: 6px;
+    }
+
+    .popup-content {
+        width: 95%;
+    }
+
+    #map {
+        height: 200px;
+    }
+
+    button {
+        font-size: 12px;
+    }
+
+    footer {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+.spinner {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255); /* White background with some transparency */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    flex-direction: column; /* Stack video and text vertically */
+    text-align: center; /* Center text */
+}
+
+.spinner video {
+    width: 280px; /* Adjust video size as needed */
+    margin-bottom: 20px; /* Add some space between the video and text */
+}
+
+.loading-text {
+    font-size: 1.2rem;
+    color: #333; /* Text color */
+    margin-top: 10px; /* Optional: Adjust spacing between text and video */
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    height: 4px;
+    width: 130px;
+    --c:no-repeat linear-gradient(#6100ee 0 0);
+    background: var(--c),var(--c),#d7b8fc;
+    background-size: 60% 100%;
+    animation: l16 3s infinite;
+  }
+  @keyframes l16 {
+    0%   {background-position:-150% 0,-150% 0}
+    66%  {background-position: 250% 0,-150% 0}
+    100% {background-position: 250% 0, 250% 0}
+  }

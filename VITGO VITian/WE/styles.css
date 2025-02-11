@@ -1,0 +1,385 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000000;
+    color: #fff;
+    padding: 15px 30px;
+    position: relative; /* To position the dropdown correctly */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Go Back Button */
+.go-back-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 20px; /* Space between button and title */
+}
+
+.go-back-btn:hover {
+    color: #ffd700; /* Highlight color on hover */
+}
+
+/* Application Title */
+header h1 {
+    font-size: 1.8rem;
+    flex-grow: 1; /* Take up remaining space */
+    text-align: center; /* Center the title */
+}
+
+/* Notification Bell and Sign Out Buttons */
+header button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+header button:hover {
+    color: #ffd700; /* Highlight color on hover */
+}
+
+/* Main Layout */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+aside {
+    flex: 1 1 250px; /* Responsive size */
+    padding: 15px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 80vh; /* Set a maximum height for the sidebar */
+}
+
+/* Optional: Customize scrollbar appearance for WebKit browsers */
+aside::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+aside::-webkit-scrollbar-thumb {
+    background-color: #ccc; /* Color of the scrollbar handle */
+    border-radius: 4px; /* Rounded corners for the scrollbar handle */
+}
+
+aside::-webkit-scrollbar-thumb:hover {
+    background-color: #999; /* Darker color on hover */
+}
+
+/* Make scrollbar appear on Firefox */
+aside {
+    scrollbar-width: thin; /* Set scrollbar width */
+    scrollbar-color: #ccc #fff; /* Scrollbar handle color and background color */
+}
+
+aside h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+#all-users-list {
+    list-style: none;
+    overflow-y: auto; /* Enable vertical scrolling for user list */
+    max-height: 300px; /* Set a maximum height for the list */
+}
+
+#all-users-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+#all-users-list li.selected {
+    background-color: #f0f0f0;
+}
+
+.user-profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.action-btn, .message-btn {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.action-btn:hover, .message-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Chat Section */
+section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#chat-box {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 400px; /* Set a max height for the chat box */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+#chat-box .message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#chat-box .sent {
+    background-color: #d4edda;
+    align-self: flex-end;
+    text-align: right;
+}
+
+#chat-box .received {
+    background-color: #f8d7da;
+    align-self: flex-start;
+    text-align: left;
+}
+
+#chat-box .message strong {
+    display: block;
+}
+
+#chat-box .message small {
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+}
+
+#message-container {
+    display: flex;
+    margin-top: 10px;
+}
+
+#message-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 90px); /* Adjust for button width */
+    margin-right: 5px;
+}
+
+#send-message-btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* Make the button full-width for mobile */
+}
+
+#send-message-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Notification Dropdown */
+#notification-dropdown {
+    display: none;
+    position: absolute;
+    right: 30px;
+    top: 60px;
+    background-color: #464646;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    width: 350px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.notification-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.sender-profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-content span {
+    display: block;
+}
+
+.accept-btn, .decline-btn {
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.accept-btn {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.accept-btn:hover {
+    background-color: #218838;
+}
+
+.decline-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.decline-btn:hover {
+    background-color: #c82333;
+}
+
+/* Notification Bell Button */
+#bell-btn {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#bell-btn::after {
+    content: attr(data-count);
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    display: none; /* Hidden by default */
+}
+
+#bell-btn[data-count]:after {
+    display: block;
+}
+
+/* Sign Out Button */
+#signout-btn {
+    padding: 5px 10px;
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#signout-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        text-align: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    aside, section {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+    #message-input {
+        width: calc(100% - 70px); /* Adjust for button width */
+    }
+
+    #send-message-btn {
+        width: 100%; /* Make button full-width on mobile */
+    }
+
+    /* Adjust user list for mobile */
+    #all-users-list {
+        max-height: 200px; /* Smaller max height for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header button {
+        font-size: 1.2rem;
+    }
+
+    aside h2 {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,238 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the footer stays at the bottom */
+}
+
+/* Header Section */
+header {
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    padding: 20px;
+    color: white;
+    justify-content: space-between; /* Spaces out logo and title */
+}
+
+header img {
+    max-width: 60px;
+}
+
+header h1 {
+    font-size: 1.8em;
+    margin-left: 20px; /* Adds space between logo and text */
+    flex-grow: 1; /* Ensures the title takes the remaining space */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #444b44;
+    color: white;
+}
+
+td {
+    font-size: 1em;
+}
+
+/* Action Button */
+button {
+    padding: 8px 15px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0b7dda;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #000000;
+    color: white;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+/* Modal/Popup Styles */
+#popupModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    display: flex; /* Ensure modal content is centered */
+}
+
+.popupContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    /* Centering the content using flexbox */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 450px;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+}
+
+.closeButton:hover {
+    color: #f44336;
+}
+
+#popupDetails p {
+    margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.4em;
+    }
+
+    table th, table td {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    button {
+        padding: 8px 12px;
+    }
+
+    .popupContent {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header img {
+        max-width: 80px;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    table th, table td {
+        font-size: 0.8em;
+        padding: 8px;
+    }
+
+    button {
+        padding: 6px 10px;
+    }
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background-color: #000000;
+    padding-top: 60px;
+    color: #e0e0e0;
+    transition: left 0.4s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    cursor: pointer;
+}
+
+.sidebar .close-btn:hover {
+    color: #ff6666;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 12px 25px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li:hover {
+    background-color: #41464b;
+}
+
+.sidebar ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar ul li a:hover {
+    color: #ffffff;
+}

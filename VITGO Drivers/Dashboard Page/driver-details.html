@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Details | EasyCab</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Firebase SDKs -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js"></script>
+</head>
+<body>
+    <header>
+        <img src="https://easycab.site/assets/logo%20(1).png" alt="EasyCab Logo" class="logo">
+        <h1>Driver Details</h1>
+    </header>
+
+    <div class="driver-info">
+        <img src="" alt="Driver Photo" id="driverPic" class="driver-pic">
+        <h2 id="driverName"></h2>
+        <p>Email: <span id="driverEmail"></span></p>
+        <p>Phone: <span id="driverPhone"></span></p>
+        <p>License: <span id="driverLicense"></span></p>
+        <p>Taxi Number: <span id="taxiNumber"></span></p>
+        <p>Address: <span id="driverAddress"></span></p>
+
+        <!-- Verified Checkmark -->
+        <div id="verificationStatus">
+            <span class="green-check">✔ Driver Verified</span>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 EasyCab | All Rights Reserved</p>
+    </footer>
+
+    <script src="../Dashboard Page/driver-details.js" type="module"></script>
+</body>
+</html>

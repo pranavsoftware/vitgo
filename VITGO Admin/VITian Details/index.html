@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../VITian Details/styles.css">
+    <link rel="icon" href="../assets/logo (1).png" type="image/x-icon">
+    <title>VITGO | VITian Details</title>
+</head>
+
+<body>
+    <div class="loader"></div>
+
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="../Dashboard/index.html">Dashboard</a></li>
+            <li><a href="../VITian Details/index.html">VITian Details</a></li>
+            <li><a href="../VITian Location Details/index.html">VITian Location Details</a></li>
+            <li><a href="../Gate Entry/index.html">Gate Entry</a></li>
+            <li><a href="../in-out/index.html">Scanner</a></li>
+            <li><a href="../Plans/index.html">VITians Plans</a></li>
+            <li><a href="../Feedback/index.html">VITians Feedback</a></li>
+            <li><a href="../VITian Notice/index.html">VITians Notice</a></li>
+            <li><a href="../EasyCab Driver Details/index.html">TAXI Driver Details</a></li>
+            <li><a href="../EasyCab Employee Details/index.html">TAXI Employee Details</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="../assets/logo (1).png" alt="Company Logo">
+            <h1>VITGO | VITian Details</h1>
+            <button class="menu-btn" id="menu-btn">Menu</button>
+        </div>
+    </header>
+
+    <!-- Main container -->
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search users..." onkeyup="filterUsers()">
+        </div>
+
+        <div class="user-details" id="userDetails">
+            <!-- User details will be dynamically populated here -->
+        </div>
+    </div>
+
+    <!-- Update Data Modal -->
+    <div id="updateModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeUpdateModal">&times;</span>
+            <h2>Update User Data</h2>
+            <form id="updateForm">
+                <label for="name">Name:</label>
+                <input type="text" id="updateName" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="updateEmail" name="email" required>
+                <label for="mobile">Mobile:</label>
+                <input type="text" id="updateMobile" name="mobile" required>
+                <label for="parentEmail">Parent's Email:</label>
+                <input type="email" id="updateParentEmail" name="parentEmail" required>
+                <label for="parentsMobile">Parent's Mobile:</label>
+                <input type="text" id="updateParentsMobile" name="parentsMobile" required>
+                <button type="submit">Update</button>
+            </form>
+            <div id="historyContent">
+                <!-- Last update history will be shown here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 EasyCab. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script type="module" src="../VITian Details/script.js"></script>
+    <script>
+        // Mobile menu functionality
+        document.getElementById('menu-btn').onclick = function () {
+            document.getElementById('sidebar').classList.toggle('active');
+        };
+
+        document.getElementById('close-btn').onclick = function () {
+            document.getElementById('sidebar').classList.remove('active');
+        };
+
+        // Function to filter users based on search input
+        function filterUsers() {
+            const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+            const users = document.querySelectorAll('.user-table tbody tr');
+            users.forEach(user => {
+                const userName = user.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                if (userName.includes(searchQuery)) {
+                    user.style.display = '';
+                } else {
+                    user.style.display = 'none';
+                }
+            });
+        }
+
+        // Function to display the update modal and populate form
+        async function showUpdateModal(userId) {
+            const user = users.find(u => u.id === userId);
+            if (user) {
+                const updateModal = document.getElementById('updateModal');
+                document.getElementById('updateName').value = user.name;
+                document.getElementById('updateEmail').value = user.email;
+                document.getElementById('updateMobile').value = user.mobile;
+                document.getElementById('updateParentEmail').value = user.parentEmail;
+                document.getElementById('updateParentsMobile').value = user.parentsMobile;
+
+                // Load the last update history for this user
+                const historyContent = document.getElementById('historyContent');
+                historyContent.innerHTML = `
+                    <p><strong>Last Update:</strong> ${user.lastUpdate || 'No updates available'}</p>
+                `;
+
+                updateModal.style.display = 'block';
+
+                document.getElementById('updateForm').onsubmit = async function (e) {
+                    e.preventDefault();
+                    const updatedUser = {
+                        name: document.getElementById('updateName').value,
+                        email: document.getElementById('updateEmail').value,
+                        mobile: document.getElementById('updateMobile').value,
+                        parentEmail: document.getElementById('updateParentEmail').value,
+                        parentsMobile: document.getElementById('updateParentsMobile').value,
+                        lastUpdate: new Date().toLocaleString() // Store the last update time
+                    };
+
+                    const userDocRef = doc(db, 'users', userId);
+                    try {
+                        await updateDoc(userDocRef, updatedUser);
+                        fetchUsers();
+                        document.getElementById('updateModal').style.display = 'none';
+                    } catch (error) {
+                        console.error("Error updating user:", error);
+                    }
+                };
+            }
+        }
+
+        // Close the modal when clicking the close button
+        document.getElementById('closeUpdateModal').onclick = function () {
+            document.getElementById('updateModal').style.display = 'none';
+        };
+
+        // Hide the loading spinner once the content is loaded
+        window.onload = function () {
+            document.getElementById('spinner').style.display = 'none';
+        };
+    </script>
+</body>
+
+</html>

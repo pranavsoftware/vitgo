@@ -1,0 +1,145 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and general styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styling */
+header {
+    background: #000000; /* Dark background */
+    color: #ffffff; /* White text */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    padding: 10px 20px; /* Reduced padding for smaller header */
+}
+
+.logo {
+    max-width: 60px; /* Adjust logo size */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+/* Company name styling */
+h1 {
+    font-size: 24px; /* Adjusted font size for the company name */
+    margin: 0; /* Remove default margin */
+}
+
+/* Main styling */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 200px); /* Center vertically */
+    padding: 20px;
+}
+
+form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px; /* Maintain maximum width */
+    margin: auto;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #b35100;
+    outline: none;
+}
+
+button {
+    background: #55616e; /* Button background color */
+    color: #ffffff; /* White text */
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background: #707880; /* Darker color on hover */
+}
+
+/* Popup message */
+.popup-message {
+    display: none; /* Initially hidden */
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #0056b3;
+    background: #e7f1ff;
+    color: #000000;
+    border-radius: 4px;
+}
+
+/* Footer styling */
+footer {
+    background: #000000; /* Dark background */
+    color: #ffffff; /* White text */
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: -70px;
+    width: 100%;
+}
+
+.social-links a {
+    color: #ffffff; /* White text */
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .logo {
+        max-width: 80px; /* Further decrease logo size on mobile */
+    }
+
+    h1 {
+        font-size: 20px; /* Smaller font size for mobile */
+    }
+
+    form {
+        padding: 15px; /* Less padding for smaller screens */
+    }
+
+    input[type="email"],
+    input[type="password"],
+    button {
+        padding: 12px; /* Smaller padding for inputs and button */
+        font-size: 14px; /* Slightly smaller font size */
+    }
+
+    button {
+        margin-top: 10px; /* Add margin for better spacing */
+    }
+}

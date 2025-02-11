@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <link rel="stylesheet" href="../Feedback/styles.css">
+    <link rel="icon" href="../assets/tab logo.ico" type="image/x-icon">
+    <!-- Include Firebase libraries -->
+    <script type="module" src="../Feedback/scripts.js" defer></script>
+</head>
+<body>
+    <!-- Spinner for loading feedback -->
+    <div class="spinner" id="spinner">
+        <video autoplay loop muted>
+            <source src="../assets/preloader.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="loading-text">Loading Feedback...</div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="../assets/logo (1).png" alt="Company Logo" class="logo">
+            <h1 class="company-name">VITGO</h1>
+        </div>
+        <button class="menu-btn" id="menu-btn">Menu</button>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="../Dashboard/index.html">Dashboard</a></li>
+            <li><a href="../VITian Details/index.html">VITian Details</a></li>
+            <li><a href="../VITian Location Details/index.html">VITian Location Details</a></li>
+            <li><a href="../Gate Entry/index.html">Gate Entry</a></li>
+            <li><a href="../in-out/index.html">Scanner</a></li>
+            <li><a href="../Plans/index.html">VITians Plans</a></li>
+            <li><a href="../Feedback/index.html">VITians Feedback</a></li>
+            <li><a href="../VITian Notice/index.html">VITians Notice</a></li>
+            <li><a href="../EasyCab Driver Details/index.html">TAXI Driver Details</a></li>
+            <li><a href="../EasyCab Employee Details/index.html">TAXI Employee Details</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="feedback-container">
+            <h2>User Feedback</h2>
+            <div id="feedback-list"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 EasyCab. All rights reserved.</p>
+    </footer>
+
+    <!-- Mobile Menu and Filter Script -->
+    <script>
+        // Mobile menu toggle functionality
+        document.getElementById('menu-btn').onclick = function () {
+            document.getElementById('sidebar').classList.toggle('active');
+        };
+
+        document.getElementById('close-btn').onclick = function () {
+            document.getElementById('sidebar').classList.remove('active');
+        };
+    </script>
+</body>
+</html>

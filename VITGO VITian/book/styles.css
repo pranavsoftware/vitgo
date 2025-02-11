@@ -1,0 +1,237 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background-color: #000000; /* Changed to a professional blue */
+    color: white;
+    padding: 15px 20px; /* Added horizontal padding for better spacing */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+
+header .logo {
+    height: 50px;
+    margin-right: 20px;
+}
+
+header h1 {
+    font-size: 1.8rem; /* Increased font size for better visibility */
+    font-weight: 600; /* Increased font weight for emphasis */
+}
+
+#user-section {
+    display: flex;
+    align-items: center;
+}
+
+#user-section #username {
+    margin-right: 20px;
+    font-size: 1.1rem; /* Slightly increased font size */
+}
+
+#user-section li {
+    list-style-type: none;
+}
+
+#user-section a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px; /* Increased padding for buttons */
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
+}
+
+#user-section a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Main section styles */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+section {
+    margin-bottom: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Increased shadow for depth */
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5rem; /* Consistent header size */
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555; /* Darker label color for better visibility */
+}
+
+input, select, textarea {
+    padding: 12px; /* Increased padding for input fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    transition: border-color 0.3s; /* Added transition for input fields */
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #007BFF; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+}
+
+button {
+    padding: 12px; /* Increased padding for buttons */
+    border: none;
+    background-color: #007BFF; /* Match the header color */
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+#reader {
+    width: 90%;
+    max-width: 300px;
+    margin: auto;
+    height: auto; /* Let the height adjust automatically */
+}
+
+#driver-info img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+#scan-result {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* Adjusted size for mobile */
+        margin: 10px 0;
+    }
+
+    #user-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #user-section a {
+        margin-top: 5px;
+    }
+
+    main {
+        padding: 15px; /* Adjusted padding for mobile */
+    }
+
+    input, select, textarea {
+        font-size: 0.9rem; /* Adjusted font size for mobile */
+    }
+
+    button {
+        font-size: 0.9rem; /* Adjusted font size for mobile */
+    }
+}
+
+/* Footer styles */
+footer {
+    background-color: #000000; /* Match the header color */
+    color: white;
+    text-align: center;
+    padding: 15px 20px; /* Added horizontal padding for consistency */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+
+footer .social-links {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffdd57; /* Change link color on hover */
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Responsive styles for footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 10px;
+    }
+
+    footer p {
+        font-size: 0.8rem; /* Adjusted font size for mobile */
+    }
+}

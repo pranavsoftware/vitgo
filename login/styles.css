@@ -1,0 +1,187 @@
+/* General styles for responsive layout */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #343a40;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px; /* Space between logo and company name */
+}
+
+.company-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Login Form styles */
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 100px; /* Adjust margin to make space for fixed header */
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input[type="email"], input[type="password"] {
+    width: 95%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Links styles */
+.links {
+    margin-top: 15px;
+}
+
+.go-back-button {
+    padding: 10px 20px;
+    background-color: #2623c5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.go-back-button:hover {
+    background-color: #2646a0;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #343a40;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .login-container {
+        margin-top: 120px; /* Adjust for mobile */
+        padding: 15px;
+    }
+
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .company-name {
+        font-size: 18px;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+
+    button,
+    input[type="email"],
+    input[type="password"] {
+        font-size: 14px;
+    }
+
+    .go-back-button {
+        font-size: 14px;
+    }
+
+    .forgot-password {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        margin-top: 140px;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .footer {
+        padding: 10px;
+        font-size: 10px;
+    }
+
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .company-name {
+        font-size: 16px;
+    }
+}

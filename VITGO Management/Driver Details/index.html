@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITGO | Driver Details</title>
+    <link rel="stylesheet" href="../Driver Details/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="../assets/logo (1).png" alt="EasyCab Logo" class="logo">
+        <span class="company-name">VITGO | Driver Details</span>
+        <button class="menu-btn" id="menu-btn">Menu</button>
+    </header>
+
+     <!-- Sidebar -->
+   <nav class="sidebar" id="sidebar">
+    <button class="close-btn" id="close-btn">&times;</button>
+    <h3>Menu</h3>
+    <ul>
+        <li><a href="../Dashboard Page/index.html">Dashboard</a></li>
+        <li><a href="../Driver Details/index.html">Driver Details</a></li>
+        <li><a href="../driver Location/index.html">Driver Location Details</a></li>
+        <li><a href="../Driver Schedule/index.html">Driver Schedule</a></li>
+        <li><a href="../Employee Details/index.html">Employee Details</a></li>
+        <li><a href="../New Driver/index.html">New Driver</a></li>
+        <li><a href="../New Employee/index.html">New Employee</a></li>
+    </ul>
+</nav>
+
+    <!-- Driver Details Table -->
+    <div class="container">
+        <h2>Driver Details</h2>
+        <table id="driver-table">
+            <thead>
+                <tr>
+                    <th>Profile Picture</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>License</th>
+                    <th>Taxi Number</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody id="driver-details"></tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 EasyCab. All rights reserved.</p>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js"></script>
+    <script type="module" src="../Driver Details/script.js"></script>
+    <script>
+        // Mobile menu and filter functionality
+        document.getElementById('menu-btn').onclick = function () {
+            document.getElementById('sidebar').classList.toggle('active');
+        };
+
+        document.getElementById('close-btn').onclick = function () {
+            document.getElementById('sidebar').classList.remove('active');
+        };
+    </script>
+</body>
+</html>

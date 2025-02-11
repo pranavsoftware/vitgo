@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Dashboard | EasyCab</title>
+    <link rel="stylesheet" href="../Dashboard Page/styles.css">
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <header>
+        <img src="../assets/logo (1).png" alt="EasyCab Logo" class="logo">
+        <h1>VITGO</h1>
+        <button id="menuBtn" class="menu-btn">☰</button>
+    </header>
+
+    <div id="sidebar" class="sidebar">
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Trip History</a></li>
+            <li><a href="#">Vehicle Details</a></li>
+            <li><a href="#">Earnings</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="card-container">
+            <div class="card">
+                <img id="driverPic" src="" alt="Driver Photo" width="150">
+                <p><strong>Name:</strong> <span id="driverName"></span></p>
+                <p><strong>Email:</strong> <span id="driverEmail"></span></p>
+                <p><strong>Phone:</strong> <span id="driverPhone"></span></p>
+                <p><strong>License:</strong> <span id="driverLicense"></span></p>
+                <p><strong>Taxi Number:</strong> <span id="taxiNumber"></span></p>
+                <p><strong>Address:</strong> <span id="driverAddress"></span></p>
+                
+                <!-- QR code will be generated here -->
+                <div id="qrcode"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 EasyCab | All Rights Reserved</p>
+    </footer>
+
+    <script type="module" src="../Dashboard Page/script.js"></script>
+    <script type="module" src="../Dashboard Page/driver location.js"></script>
+</body>
+</html>

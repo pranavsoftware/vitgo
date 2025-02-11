@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITGO</title>
+    <link rel="stylesheet" href="../WE/styles.css">
+    <script type="module" src="../WE/scripts.js" defer></script>
+    <link rel="icon" href="../assets/logo (1).png" type="image/x-icon">
+    <script type="module" src="../dashboard/location tracker.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>VITGO</h1>
+        <button id="bell-btn" data-count="0">&#128276;</button>
+        <div id="notification-dropdown" class="dropdown"></div>
+        <button id="go-back-btn" class="go-back-btn" aria-label="Go Back">&#8592; Go Back</button>
+    </header>
+    
+    <main>
+        <aside>
+            <h2>All Users</h2>
+            <input type="text" id="search-bar" placeholder="Search Users..." />
+            <ul id="all-users-list"></ul>
+        </aside>
+
+        <section>
+            <div id="chat-box"></div>
+            <input type="text" id="message-input" placeholder="Type your message..." />
+            <button id="send-message-btn">Send</button>
+        </section>
+    </main>
+</body>
+
+</html>

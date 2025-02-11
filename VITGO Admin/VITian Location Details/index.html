@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITGO | VITian Location</title>
+    <link rel="stylesheet" href="../VITian Location Details/styles.css">
+     <link rel="icon" href="../assets/logo (1).png" type="image/x-icon">
+    <!-- Add Firebase SDK -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js"></script>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Preloader Spinner -->
+    <div class="spinner" id="spinner">
+        <video autoplay loop muted>
+            <source src="../assets/preloader.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="loading-text">Please wait, the dashboard is loading...</div>
+    </div>
+
+    <header>
+        <img src="../assets/logo (1).png" alt="EasyCab Logo" class="logo">
+        <span>VITGO | VITian Location</span>
+        <a href="../Dashboard/index.html" class="go-back-btn">Go Back</a>
+    </header>
+
+    <main>
+        <h2>User Locations</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Location (Lat, Lon)</th>
+                    <th>Timestamp</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="location-table-body">
+                <!-- Data will be injected here -->
+            </tbody>
+        </table>
+
+        <!-- Popup for showing detailed location -->
+        <div id="location-popup" class="popup">
+            <div class="popup-content">
+                <h3>Location Details</h3>
+                <p id="location-address"></p>
+                <div id="map" style="height: 300px; width: 100%;"></div>
+                <button onclick="closePopup()">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 EasyCab. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="../VITian Location Details/scripts.js"></script> <!-- Include the JS file here -->
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</body>
+</html>

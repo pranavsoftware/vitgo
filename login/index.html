@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Login</title>
+    <link rel="stylesheet" href="../login/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <img src="https://easycab.site/assets/logo%20(1).png" alt="EasyCab Logo" class="logo">
+        <span class="company-name">EasyCab</span>
+    </header>
+
+    <!-- Login Form Section -->
+    <div class="login-container">
+        <h2>Driver Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" id="loginButton">Login</button>
+        </form>
+        <div class="links">
+            <button onclick="window.history.back();" class="go-back-button">Go Back</button>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+        <p id="error-message"></p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 EasyCab. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="../login/scripts.js"></script>
+</body>
+</html>

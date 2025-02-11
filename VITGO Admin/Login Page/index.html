@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | VITGO</title>
+    <link rel="icon" href="../assets/logo (1).png" type="image/png" sizes="32x32">
+    <link rel="stylesheet" href="../Login Page/styless.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <img src="../assets/logo (1).png" alt="EasyCab Logo" class="logo">
+            <h1 class="company-name">VITGO</h1>
+        </header>
+
+        <!-- Login Form -->
+        <div class="login-form">
+            <h2>Login</h2>
+            <p class="admin-only-note">Note: This login page is exclusively for admin access.</p>
+            <input type="email" id="email" placeholder="Please enter your official VIT email ID:" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button class="login-button" id="loginButton">Login</button>
+            <p class="go-back-text">
+                <a href="/LM/index.html" class="go-back-link">Go back to Home Page</a>
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2024 EasyCab. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Modal for animated alert -->
+    <div id="alertModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="emoji-container">
+                <span class="emoji">🎉</span> <!-- Emoji for added fun -->
+            </div>
+            <p id="modalMessage" class="modal-message">Your message here!</p>
+        </div>
+    </div>
+
+    <script type="module" src="../Login Page/script.js"></script>
+</body>
+
+</html>

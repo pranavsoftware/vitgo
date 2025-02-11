@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyCab | Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="scripts.js"></script>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="../dashboard/index.html">Dashboard</a></li>
+            <li><a href="../+Add Your Plan/index.html">+Add Your Plan</a></li>
+            <li><a href="../WE/index.html">Web-Chat</a></li>
+            <li><a href="../book/index.html">Booking</a></li>
+            <li><a href="../Profile/index.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div id="spinner" class="spinner">
+            <video src="../assets/preloader.mp4" autoplay loop muted></video>
+            <p>Loading plans, please wait...</p>
+        </div>
+        <div id="plans-container"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <div class="logo">
+                <img src="https://easycab.site/assets/logo%20(1).png" alt="EasyCab Logo" width="50">
+                <h1>EasyCab</h1>
+            </div>
+        </div>
+        <button class="menu-btn" id="menu-btn">Menu</button>
+    </header>
+
+    <!-- Profile Container -->
+    <div class="profile-container">
+        <form id="profile-form" class="profile-form">
+            <h2>Profile Details</h2>
+
+            <!-- Profile Picture -->
+            <div class="profile-pic-container">
+                <img id="profile-pic" src="../assets/default Avatar .jpg" alt="Profile Picture">
+            </div>
+
+            <!-- Name and Email -->
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" disabled>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" disabled>
+            </div>
+
+            <div class="input-group">
+                <label for="uid">User UID</label>
+                <input type="text" id="uid" disabled>
+            </div>
+
+            <!-- Gender Selection -->
+            <div class="input-group">
+                <label for="gender">Gender</label>
+                <select id="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <!-- Hostel Block Selection (Dynamic) -->
+            <div class="input-group">
+                <label for="hostel-block">VIT Hostel Block</label>
+                <select id="hostel-block" required>
+                    <option value="">Select Hostel</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" placeholder="Enter mobile number" required>
+            </div>
+
+            <div class="input-group">
+                <label for="parents-mobile">Parents' Mobile Number</label>
+                <input type="tel" id="parents-mobile" placeholder="Enter parent's mobile number" required>
+            </div>
+
+            <div class="input-group">
+                <label for="parent-email">Parent's Email ID</label>
+                <input type="email" id="parent-email" placeholder="Enter parent's email ID" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Change Password (optional)</label>
+                <input type="password" id="password" placeholder="Enter new password">
+            </div>
+
+            <button type="submit">Update Profile</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 EasyCab | All Rights Reserved</p>
+    </footer>
+
+    <script type="module" src="scripts.js"></script>
+</body>
+
+</html>

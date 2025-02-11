@@ -1,0 +1,398 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Header Styles */
+header {
+    background-color: #000000;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header h1 {
+    font-size: 1.8em;
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+    margin-right: -6px;
+}
+
+header .menu-btn {
+    background: #ffffff;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 1em;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; /* Position the menu button on the right */
+}
+
+header .menu-btn:hover {
+    color: #3d3939;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background-color: #000000;
+    padding-top: 60px;
+    color: #e0e0e0;
+    transition: left 0.4s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    cursor: pointer;
+}
+
+.sidebar .close-btn:hover {
+    color: #ff6666;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 12px 25px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li:hover {
+    background-color: #41464b;
+}
+
+.sidebar ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar ul li a:hover {
+    color: #ffffff;
+}
+
+/* Main Container */
+.container {
+    margin-top: 80px; /* To prevent content from being hidden under fixed header */
+    padding: 20px;
+    min-height: 100vh;
+    overflow-y: auto; /* Ensure scrolling works when content overflows */
+}
+
+/* Search Bar */
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    width: 80%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* User Details Table */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Makes sure columns adjust to fit content */
+}
+
+.user-table th,
+.user-table td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+    word-wrap: break-word; /* Prevents text overflow */
+}
+
+.user-table th {
+    background-color: #333;
+    color: white;
+}
+
+.user-table td {
+    background-color: #fff;
+}
+
+.user-table tbody tr:hover {
+    background-color: #f4f4f4;
+}
+
+.user-face {
+    width: 100px;
+    height: 95px;
+    border-radius: 20%;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    margin: 100px auto;
+    width: 60%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal .close {
+    position: absolute;
+    top: 100px;
+    right: 335px;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+}
+
+footer .social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .social-links a:hover {
+    color: #ff6666;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+/* Spinner Styles */
+.spinner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1500;
+}
+
+.spinner.active {
+    display: block;
+}
+
+.spinner video {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.loading-text {
+    margin-top: 10px;
+    color: white;
+    font-size: 1.2em;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .menu-btn {
+        font-size: 1.8em;
+    }
+
+    .sidebar {
+        width: 220px;
+    }
+
+    .sidebar ul li {
+        padding: 10px 20px;
+    }
+
+    .search-bar input {
+        width: 90%;
+    }
+
+    .user-table {
+        font-size: 0.9em;
+    }
+
+    .user-table th, .user-table td {
+        padding: 8px;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .sidebar {
+        width: 180px;
+    }
+
+    .sidebar ul li {
+        padding: 8px 15px;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+
+    .user-table {
+        font-size: 0.8em;
+    }
+
+    .modal-content {
+        width: 95%;
+        max-width: 350px;
+    }
+}
+
+/* General Button Styles */
+button {
+    font-family: Arial, sans-serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+/* Delete Button Styles */
+.delete-button {
+    background-color: #ff4d4d; /* Bright red */
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.delete-button:hover {
+    background-color: #cc0000; /* Darker red */
+    color: #fff;
+}
+
+/* Update Button Styles */
+.update-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.update-button:hover {
+    background-color: #3e8e41; /* Darker green */
+    color: #fff;
+}
+
+/* Button Layout for Different Screen Sizes */
+button + button {
+    margin-left: 10px; /* Add space between buttons */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+
+    button + button {
+        margin-left: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+
+    button + button {
+        margin-left: 6px;
+    }
+}

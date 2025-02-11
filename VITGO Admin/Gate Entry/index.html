@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITGO | Entry Details</title>
+    <link rel="stylesheet" href="../Gate Entry/styles.css">
+    <link rel="icon" href="../assets/logo (1).png" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="../assets/logo (1).png" alt="EasyCab Logo" class="logo">
+            <h1>VITGO | Gate Entry Details</h1>
+            <button class="menu-btn" id="menu-btn">Menu</button>
+        </div>
+    </header>
+
+<!-- Sidebar -->
+<nav class="sidebar" id="sidebar">
+    <button class="close-btn" id="close-btn">&times;</button>
+    <h3>Menu</h3>
+    <ul>
+        <li><a href="../Dashboard/index.html">Dashboard</a></li>
+        <li><a href="../VITian Details/index.html">VITian Details</a></li>
+        <li><a href="../VITian Location Details/index.html">VITian Location Details</a></li>
+        <li><a href="../Gate Entry/index.html">Gate Entry</a></li>
+        <li><a href="../in-out/index.html">Scanner</a></li>
+        <li><a href="../Plans/index.html">VITians Plans</a></li>
+        <li><a href="../Feedback/index.html">VITians Feedback</a></li>
+        <li><a href="../VITian Notice/index.html">VITians Notice</a></li>
+        <li><a href="../EasyCab Driver Details/index.html">TAXI Driver Details</a></li>
+        <li><a href="../EasyCab Employee Details/index.html">TAXI Employee Details</a></li>
+    </ul>
+</nav>
+
+    <div class="search">
+        <label for="dateSearch">Search by Date: </label>
+        <input type="date" id="dateSearch">
+    </div>
+
+    <table id="driverLogs">
+        <thead>
+            <tr>
+                <th>Driver Name</th>
+                <th>Taxi Number</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dynamic content will be loaded here -->
+        </tbody>
+    </table>
+
+    <footer>
+        <p>&copy; 2024 EasyCab. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js"></script>
+    <script type="module" src="../Gate Entry/script.js"></script>
+
+</body>
+</html>
+
+<script>
+    // Mobile menu and filter functionality
+    document.getElementById('menu-btn').onclick = function () {
+        document.getElementById('sidebar').classList.toggle('active');
+    };
+
+    document.getElementById('close-btn').onclick = function () {
+        document.getElementById('sidebar').classList.remove('active');
+    };
+</script>

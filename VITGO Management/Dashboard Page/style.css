@@ -1,0 +1,321 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Light background color */
+    color: #000000; /* Text color */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full height for footer positioning */
+}
+
+header {
+    background-color: #000000; /* Header background color */
+    color: white;
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 60px; /* Logo size */
+}
+
+h1 {
+    font-size: 25px;
+    margin: 8px;
+    flex-grow: 1; /* Allow header to take available space */
+}
+
+.employee-info {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Added space between heading and employee info */
+}
+
+.profile-pic {
+    width: 40px; /* Profile picture size */
+    height: 40px; /* Profile picture size */
+    border-radius: 50%; /* Circular profile picture */
+    margin-right: 10px;
+}
+
+#logoutButton {
+    background-color: #f44336; /* Logout button color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth hover effect */
+    margin-left: 20px; /* Space between profile info and logout button */
+}
+
+#logoutButton:hover {
+    background-color: #d32f2f; /* Darker shade on hover */
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background-color: #000000;
+    padding-top: 60px;
+    color: #e0e0e0;
+    transition: left 0.4s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    cursor: pointer;
+}
+
+.sidebar .close-btn:hover {
+    color: #ff6666;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 12px 25px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li:hover {
+    background-color: #41464b;
+}
+
+.sidebar ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar ul li a:hover {
+    color: #ffffff;
+}
+
+/* Main Content */
+main {
+    flex: 1; /* Take remaining space */
+    background-color: #fff;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 20px;
+}
+
+.notice-board {
+    margin-top: 20px;
+}
+
+.notice {
+    border: 1px solid #ddd; /* Border for notices */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px;
+    margin-bottom: 15px; /* Space between notices */
+    background-color: #f9f9f9; /* Notice background */
+}
+
+.notice h3 {
+    margin: 0 0 10px; /* Margin for title */
+    font-size: 18px; /* Title font size */
+}
+
+.notice p {
+    margin: 5px 0; /* Margin for paragraphs */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #000000; /* Footer background color */
+    color: white;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none; /* Remove underline */
+    margin: 0 10px; /* Space between links */
+}
+
+.social-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Mobile and Tablet Responsiveness */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin: 5px 0;
+    }
+
+    .employee-info {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    #logoutButton {
+        margin-top: 10px;
+    }
+
+    .sidebar {
+        left: -260px;
+        top: 0;
+        padding-top: 50px;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .sidebar ul li {
+        padding: 10px 20px;
+    }
+
+    .sidebar ul li a {
+        font-size: 0.9em;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .notice h3 {
+        font-size: 16px;
+    }
+}
+
+/* Mobile First Layout */
+@media (max-width: 480px) {
+    .header-content {
+        padding: 0 15px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .profile-pic {
+        width: 35px;
+        height: 35px;
+    }
+
+    #logoutButton {
+        padding: 8px 12px;
+    }
+
+    .sidebar {
+        left: -260px;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .notice h3 {
+        font-size: 14px;
+    }
+
+    .notice p {
+        font-size: 14px;
+    }
+}
+
+/* Menu Button Styles */
+.menu-btn {
+    background-color: #4b4a9c; /* Button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover and active effect */
+    margin-left: 20px;
+}
+
+/* Hover effect */
+.menu-btn:hover {
+    background-color: #444444; /* Darker shade on hover */
+}
+
+/* Active effect */
+.menu-btn:active {
+    transform: scale(0.95); /* Button shrink on click */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .menu-btn {
+        padding: 12px 18px;
+        font-size: 18px; /* Larger font size for mobile */
+        margin-left: 15px; /* Adjust space for smaller screens */
+    }
+}
+
+/* Mobile First Layout */
+@media (max-width: 480px) {
+    .menu-btn {
+        padding: 10px 15px;
+        font-size: 16px;
+        margin-left: 10px; /* Less margin for tighter screens */
+    }
+}

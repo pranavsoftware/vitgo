@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITGO</title>
+    <link rel="icon" href="../assets/tab logo.ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="../dashboard/style.css">
+    <script type="module" src="../dashboard/script.js" defer></script>
+    <script type="module" src="../dashboard/location tracker.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="../assets/logo (1).png" alt="VITGO Logo" class="logo">
+            <span class="company-name">VITGO</span>
+        </div>
+        <div class="user-profile">
+            <img src="" alt="User Profile" id="profile-pic" class="profile-pic">
+            <span id="user-name"></span>
+            <div class="dropdown" id="profile-dropdown">
+                <button id="logout-button">Logout</button>
+            </div>
+        </div>
+
+        <button class="menu-btn" id="menu-btn">Menu</button>
+        <button class="filter-btn" id="filter-btn">Filter</button>
+    </header>
+
+    <div class="main-container">
+        <nav class="sidebar" id="sidebar">
+            <button class="close-btn" id="close-btn">&times;</button>
+            <h3>Menu</h3>
+            <ul>
+                <li><a href="../+Add Your Plan/index.html">+Add Your Plan</a></li>
+                <li><a href="../WE/index.html">Web-Chat</a></li>
+                <li><a href="../book/index.html">Booking</a></li>
+                <li><a href="../Profile/index.html">Profile</a></li>
+            </ul>
+        </nav>
+
+        <aside class="filters" id="filters">
+            <h3>Filters</h3>
+            <button class="close-btn" id="close-filters">&times;</button>
+            <label for="university">University:</label>
+            <select id="university">
+                <option value="all">All</option>
+                <option value="VIT Vellore">VIT Vellore</option>
+                <option value="VIT Chennai">VIT Chennai</option>
+                <option value="VIT Bhopal">VIT Bhopal</option>
+                <option value="VIT AP">VIT AP</option>
+            </select>
+
+            <label for="state">State:</label>
+            <select id="state">
+                <option value="all">All</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Maharashtra">Maharashtra</option>
+            </select>
+
+            <label for="city">City:</label>
+            <select id="city">
+                <option value="all">All</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Vellore">Vellore</option>
+            </select>
+
+            <label for="place">Place:</label>
+            <select id="place">
+                <option value="all">All</option>
+                <option value="VIT Campus">VIT Campus</option>
+                <option value="Chennai Airport">Chennai Airport</option>
+                <option value="Velachery">Velachery</option>
+            </select>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date">
+            <button id="apply-filters">Apply Filters</button>
+            <button id="reset-filters">Reset Filters</button>
+        </aside>
+
+        <div class="content">
+            <div id="spinner" class="spinner">
+                <video src="../assets/preloader.mp4" autoplay loop muted></video>
+                <p>Loading plans, please wait...</p>
+            </div>
+            <div id="plans-container"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 VITGO. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu and filter functionality
+        document.getElementById('menu-btn').onclick = function () {
+            document.getElementById('sidebar').classList.toggle('active');
+        };
+
+        document.getElementById('filter-btn').onclick = function () {
+            document.getElementById('filters').classList.toggle('active');
+        };
+
+        document.getElementById('close-btn').onclick = function () {
+            document.getElementById('sidebar').classList.remove('active');
+        };
+
+        document.getElementById('close-filters').onclick = function () {
+            document.getElementById('filters').classList.remove('active');
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITGO | Employee Dashboard</title>
+    <link rel="stylesheet" href="../Dashboard Page/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="../assets/logo (1).png" alt="Company Logo" class="logo">
+            <h1>VITGO | Employee Dashboard</h1>
+            <div class="employee-info">
+                <img src="" alt="Profile Picture" class="profile-pic" id="profilePic">
+                <span id="employeeName"></span>
+                <button class="menu-btn" id="menu-btn">Menu</button>
+                <button id="logoutButton">Logout</button>
+            </div>
+        </div>
+    </header>
+
+   <!-- Sidebar -->
+   <nav class="sidebar" id="sidebar">
+    <button class="close-btn" id="close-btn">&times;</button>
+    <h3>Menu</h3>
+    <ul>
+        <li><a href="../Dashboard Page/index.html">Dashboard</a></li>
+        <li><a href="../VITian Booking/index.html">VITian Booking</a></li>
+        <li><a href="../Driver Details/index.html">Driver Details</a></li>
+        <li><a href="../driver Location/index.html">Driver Location Details</a></li>
+        <li><a href="../Driver Schedule/index.html">Driver Schedule</a></li>
+        <li><a href="../Employee Details/index.html">Employee Details</a></li>
+        <li><a href="../New Driver/index.html">New Driver</a></li>
+        <li><a href="../New Employee/index.html">New Employee</a></li>
+    </ul>
+</nav>
+
+        <main>
+            <h2>Notice Board</h2>
+            <div id="noticeBoard" class="notice-board"></div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 EasyCab. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="../Dashboard Page/script.js"></script>
+    <script>
+        // Mobile menu and filter functionality
+        document.getElementById('menu-btn').onclick = function () {
+            document.getElementById('sidebar').classList.toggle('active');
+        };
+
+        document.getElementById('close-btn').onclick = function () {
+            document.getElementById('sidebar').classList.remove('active');
+        };
+    </script>
+</body>
+</html>

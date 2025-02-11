@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Locations</title>
+    <link rel="stylesheet" href="../Driver location/styles.css">
+    <link rel="icon" href="../assets/logo (1).png" type="image/png" sizes="32x32">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <img src="../assets/logo (1).png" alt="EasyCab Logo" class="logo">
+        <h1>EasyCab - Driver Locations</h1>
+        <div>
+            <button class="menu-btn" id="menu-btn">Menu</button>
+        </div>
+    </header>
+
+    
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="../Dashboard/index.html">Dashboard</a></li>
+            <li><a href="../VITian Details/index.html">VITian Details</a></li>
+            <li><a href="../VITian Location Details/index.html">VITian Location Details</a></li>
+            <li><a href="../Driver location/index.html">Driver Location</a></li>
+            <li><a href="../Gate Entry/index.html">Gate Entry</a></li>
+            <li><a href="../in-out/index.html">Scanner</a></li>
+            <li><a href="../Plans/index.html">VITians Plans</a></li>
+            <li><a href="../Feedback/index.html">VITians Feedback</a></li>
+            <li><a href="../VITian Notice/index.html">VITians Notice</a></li>
+            <li><a href="../EasyCab Driver Details/index.html">TAXI Driver Details</a></li>
+            <li><a href="../EasyCab Employee Details/index.html">TAXI Employee Details</a></li>
+        </ul>
+    </nav>
+
+    <!-- Table for displaying driver data -->
+    <main>
+        <table id="driverTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="driverTableBody">
+                <!-- Data will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 EasyCab. All rights reserved.</p>
+    </footer>
+
+   <!-- Modal/Popup -->
+<div id="popupModal" style="display: none;">
+    <div class="popupContent">
+        <!-- Close Button -->
+        <span onclick="closePopup()" class="closeButton">&times;</span>
+        <div id="popupDetails"></div>
+    </div>
+</div>
+
+    <!-- Firebase Scripts and Custom Script -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js"></script>
+    <script type="module" src="../Driver location/scripts.js"></script>
+
+    <script>
+        // Mobile menu and filter functionality
+        document.getElementById('menu-btn').onclick = function () {
+            document.getElementById('sidebar').classList.toggle('active');
+        };
+
+        document.getElementById('close-btn').onclick = function () {
+            document.getElementById('sidebar').classList.remove('active');
+        };
+    </script>
+</body>
+</html>

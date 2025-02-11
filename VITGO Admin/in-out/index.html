@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITGO | Gate Scanner</title>
+    <link rel="stylesheet" href="../in-out/styles.css">
+    <script type="module" src="../in-out/firebase config.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js" integrity="sha512-r6rDA7W6ZeQhvl8S7yRVQUKVHdexq+GAlNkNNqVC7YyIV+NwqCTJe2hDWCiffTyRNOeGEzRRJ9ifvRm/HCzGYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <header>
+        <img src="../assets/logo (1).png" alt="EasyCab Logo" class="logo">
+        <h1>VITGO | Gate Scanner</h1>
+        <a href="../Dashboard/index.html" class="go-back-btn">Go Back</a>
+    </header>
+
+    <main>
+        <div id="reader" style="width: 100%; height: 300px;"></div>
+        <div id="scan-result" class="scan-result"></div>
+        
+        <button id="startScanBtn" class="scan-btn">Start Scanning</button>
+        <button id="stopScanBtn" class="scan-btn" style="display: none;">Stop Scanning</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 EasyCab. All rights reserved.</p>
+    </footer>
+
+    <div id="confirmation-popup" style="display: none;">
+        <p>Scan successful!</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+    
+
+    <script type="module" src="../in-out/scripts.js"></script>
+</body>
+</html>
+
+<script>
+   // Function to close the confirmation popup
+function closePopup() {
+    document.getElementById('confirmation-popup').style.display = 'none';
+}
+
+// Ensure this script runs after the page is fully loaded or after the DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    const closeBtn = document.querySelector("#confirmation-popup button");
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closePopup); // Attach closePopup event handler
+    }
+
+    // Automatically close the popup after 3 seconds
+    setTimeout(closePopup, 3000); // 3000 milliseconds = 3 seconds
+});
+
+
+</script>

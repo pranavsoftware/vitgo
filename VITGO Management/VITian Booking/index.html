@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITGO | VITian Booking</title>
+    <link rel="stylesheet" href="../VITian Booking/style.css">
+    <script type="module" src="../VITian Booking/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>VITGO | VITian Booking</h1>
+        <input type="text" id="searchBar" placeholder="Search by Booking ID">
+        <button class="menu-btn" id="menu-btn">Menu</button>
+    </header>
+
+     <!-- Sidebar -->
+   <nav class="sidebar" id="sidebar">
+    <button class="close-btn" id="close-btn">&times;</button>
+    <h3>Menu</h3>
+    <ul>
+        <li><a href="../Dashboard Page/index.html">Dashboard</a></li>
+        <li><a href="../VITian Booking/index.html">VITian Booking</a></li>
+        <li><a href="../Driver Details/index.html">Driver Details</a></li>
+        <li><a href="../driver Location/index.html">Driver Location Details</a></li>
+        <li><a href="../Driver Schedule/index.html">Driver Schedule</a></li>
+        <li><a href="../Employee Details/index.html">Employee Details</a></li>
+        <li><a href="../New Driver/index.html">New Driver</a></li>
+        <li><a href="../New Employee/index.html">New Employee</a></li>
+    </ul>
+</nav>
+
+    <table id="bookings-table">
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Booking ID</th>
+                <th>Car</th>
+                <th>No. of Students</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Payment Mode</th>
+                <th>Message</th>
+                <th>Driver Details</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+  <!-- Popup notification element -->
+<div id="notificationPopup" style="display: none;"></div>
+
+
+    <!-- Modal Form -->
+    <div id="driverDetailsModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Driver Details</h2>
+            <form id="driverDetailsForm">
+                <label for="driver">Driver Name:</label>
+                <input type="text" id="driver" name="driver">
+
+                <label for="cabName">Cab Name:</label>
+                <input type="text" id="cabName" name="cabName">
+
+                <label for="taxiNumber">Taxi Number:</label>
+                <input type="text" id="taxiNumber" name="taxiNumber">
+
+                <label for="phone">Driver Phone:</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="estimatedPickTime">Estimated Pick Time:</label>
+                <input type="time" id="estimatedPickTime" name="estimatedPickTime">
+
+                <label for="bookingMessage">Booking Message:</label>
+                <p id="bookingMessage"></p> <!-- Display the original booking message -->
+
+                <label for="driverMessage">Driver Message:</label>
+                <input type="text" id="driverMessage" name="driverMessage">
+
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" disabled>
+
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    // Mobile menu and filter functionality
+    document.getElementById('menu-btn').onclick = function () {
+        document.getElementById('sidebar').classList.toggle('active');
+    };
+
+    document.getElementById('close-btn').onclick = function () {
+        document.getElementById('sidebar').classList.remove('active');
+    };
+</script>
+
+</html>

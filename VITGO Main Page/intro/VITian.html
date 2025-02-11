@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyCab</title>
+    <link rel="icon" href="../assets/tab logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* styles.css */
+
+        /* Splash Screen Styles */
+        body {
+            font-family: 'Roboto', sans-serif; /* Set font to Roboto */
+            margin: 0;
+            background-color: #ffffff; /* Dark background color */
+            color: #000000; /* White text color */
+        }
+
+        .splash-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: fixed;
+            width: 100%;
+            z-index: 9999; /* Make sure it's on top */
+            padding: 20px; /* Add padding to prevent edge touching */
+            box-sizing: border-box; /* Include padding in height calculations */
+        }
+
+        .title {
+            font-size: 32px; /* Title font size */
+            margin-bottom: 20px; /* Space between title and logo */
+            text-align: center; /* Center title */
+        }
+
+        .logo {
+            width: 250px; /* Increased size for the logo */
+            max-width: 100%; /* Ensure logo is responsive */
+            height: auto; /* Maintain aspect ratio */
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 1.1s forwards; /* Animation for logo */
+        }
+
+        .welcome-text {
+            font-size: 28.3px; /* Welcome text size */
+            margin-top: 10px; /* Space between logo and welcome text */
+            text-align: center; /* Center text */
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 1.1s forwards; /* Animation for welcome text */
+            animation-delay: 0.5s; /* Delay for logo display */
+        }
+
+        .footer-text {
+            position: absolute;
+            bottom: 20px;
+            font-size: 13px; /* Footer text size */
+            color: #000000; /* White footer text */
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 1.1s forwards; /* Animation for footer text */
+            animation-delay: 1s; /* Delay to match the splash duration */
+        }
+
+        /* Fade in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Main Content Styles */
+        .hidden {
+            display: none; /* Hide main content initially */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="title">EasyCab</div>
+        <img src="../assets/logo (1).png" alt="Logo" class="logo">
+        <h1 class="welcome-text">Welcome to EasyCab VITian</h1>
+        <p class="footer-text">Made By VIT Student</p>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="hidden">
+        <!-- Your main app content goes here -->
+    </div>
+
+    <script>
+        // Redirect after the splash screen
+        document.addEventListener('DOMContentLoaded', () => {
+            const splashScreen = document.getElementById('splash-screen');
+
+            // Show splash screen for 4.5 seconds
+            setTimeout(() => {
+                splashScreen.style.display = 'none'; // Hide the splash screen
+                window.location.href = '../face/index.html'; // Redirect to the login page
+            }, 5000); // 4500 milliseconds (4.5 seconds)
+        });
+    </script>
+</body>
+
+</html>

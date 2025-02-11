@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITGO | Plan</title>
+    <link rel="icon" href="../assets/logo (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="../+Add Your Plan/styles.css">
+    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js"></script>
+    <script type="module" src="../+Add Your Plan/scripts.js" defer></script>
+    <script type="module" src="../dashboard/location tracker.js"></script>
+
+    <script>
+        // JavaScript to display the pop-up on page load and close it
+        document.addEventListener("DOMContentLoaded", function () {
+            const visitPopup = document.getElementById("visit-popup");
+            const closeVisitPopupButton = document.getElementById("close-visit-popup");
+
+            // Show the pop-up when the page loads
+            visitPopup.style.display = "flex";
+
+            // Close the pop-up when the close button is clicked
+            closeVisitPopupButton.addEventListener("click", function () {
+                visitPopup.style.display = "none";
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Pop-up Modal on Visit -->
+    <div id="visit-popup">
+        <div id="visit-popup-content">
+            <h2>Welcome to VITGO!</h2>
+            <p>Ensure your plan details are accurate before posting. Incorrect details cannot be edited. Thank you!</p>
+            <button id="close-visit-popup">Close</button>
+        </div>
+    </div>
+
+    <header class="transparent-header">
+        <div class="logo">
+            <img src="../assets/logo (1).png" alt="Company Logo">
+            <h1>VITGO</h1>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+        <nav class="nav-menu">
+            <ul class="menu-list">
+                <li><a href="../dashboard/index.html">Dashboard</a></li>
+                <li><a href="../WE/index.html">Web-Chat</a></li>
+                <li><a href="../book/index.html">Booking</a></li>
+                <li><a href="../Profile/index.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="post-plan-container">
+        <main class="form-container">
+            <h2>Post Your Plan</h2>
+            <form id="postPlanForm">
+                <label for="university">VIT's Campus:</label>
+                <select id="university" required>
+                    <option value="">Select Campus</option>
+                    <option value="VIT Vellore">VIT Vellore</option>
+                    <option value="VIT Chennai">VIT Chennai</option>
+                    <option value="VIT Bhopal">VIT Bhopal</option>
+                    <option value="VIT AP">VIT AP</option>
+                </select>
+
+                <label for="fromState">From State:</label>
+                <select id="fromState" required>
+                    <option value="">Select State</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                </select>
+
+                <label for="fromCity">From City:</label>
+                <select id="fromCity" required>
+                    <option value="">Select City</option>
+                </select>
+
+                <label for="fromPlace">From Place:</label>
+                <select id="fromPlace" required>
+                    <option value="">Select Place</option>
+                </select>
+
+                <label for="toState">To State:</label>
+                <select id="toState" required>
+                    <option value="">Select State</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                </select>
+
+                <label for="toCity">To City:</label>
+                <select id="toCity" required>
+                    <option value="">Select City</option>
+                </select>
+
+                <label for="toPlace">To Place:</label>
+                <select id="toPlace" required>
+                    <option value="">Select Place</option>
+                </select>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" required>
+                    <option value="">Select Gender Preference</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Comfortable for both">Comfortable for both</option>
+                </select>
+
+                <label for="luggage">Luggage:</label>
+                <input type="text" id="luggage" placeholder="e.g., 2 suitcases, 1 handbag" required>
+
+                <label for="carType">Car Type:</label>
+                <select id="carType" required>
+                    <option value="">Select Car Type</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="Luxury">Luxury</option>
+                    <option value="Minivan">Minivan</option>
+                </select>
+
+                <label for="message">Message:</label>
+                <textarea id="message" rows="4" required></textarea>
+
+                <button type="submit">Post Plan</button>
+            </form>
+        </main>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>Plan posted successfully!</p>
+            <button id="closePopup">Close</button>
+        </div>
+    </div>
+
+    <footer>
+            <p>&copy; 2025 VITGO. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

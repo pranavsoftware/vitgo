@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Maintenance</title>
+    <link rel="manifest" href="../index/manifest.json">
+</head>
+<body>
+    <style>
+        /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f0f0f0;
+    color: #333;
+    text-align: center;
+    padding-top: 60px; /* Space for fixed header */
+}
+
+/* Header Styling */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #333;
+}
+
+.go-back-button {
+    font-size: 16px;
+    text-decoration: none;
+    color: #e26e10;
+    border: 2px solid #ff9100;
+    border-radius: 4px;
+    padding: 8px 16px;
+    background: #fff;
+    transition: background 0.3s, color 0.3s;
+}
+
+.go-back-button:hover {
+    background: #ff7300;
+    color: #fff;
+}
+
+/* Main Container Styling */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px); /* Adjust based on header height */
+}
+
+.container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Footer Styling */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.social-link {
+    color: #fff;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #c26121;
+}
+
+.facebook::before {
+    content: url('icons/facebook.svg');
+}
+
+.twitter::before {
+    content: url('icons/twitter.svg');
+}
+
+.instagram::before {
+    content: url('icons/instagram.svg');
+}
+
+.linkedin::before {
+    content: url('icons/linkedin.svg');
+}
+
+    </style>
+    <header>
+        <div class="header-container">
+            <a href="../assets/logo (1).png" class="logo">Easycab</a>
+            <a href="../Dashboard/dashboard.html" class="go-back-button">Go Back</a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>We'll Be Back Soon!</h1>
+            <p>Our website is currently under maintenance. We appreciate your patience and understanding.</p>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <p>Follow us:</p>
+            <a href="#" class="social-link instagram">Instagram</a>
+            <a href="#" class="social-link linkedin">LinkedIn</a>
+        </div>
+    </footer>
+</body>
+</html>

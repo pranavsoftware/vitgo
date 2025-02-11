@@ -1,0 +1,178 @@
+/* General styles for responsive layout */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+/* Container for the login page */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 80px; /* Adjust margin for space below header */
+}
+
+/* Header styles */
+header {
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+header img.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px; /* Space between logo and company name */
+}
+
+header h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Login Form styles */
+.container h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+input[type="email"], input[type="password"] {
+    width: 95%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin-top: 10px;
+}
+
+p a {
+    color: #007bff;
+    font-size: 14px;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #000000;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #adb5bd;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px; /* Add padding if needed */
+    }
+    
+    header .logo {
+        margin-right: 10px; /* Space between the logo and company name */
+    }
+    
+    header h1 {
+        font-size: 18px;
+        margin: 0; /* Remove default margin */
+    }
+    
+
+    .container {
+        margin-top: 100px;
+        padding: 15px;
+    }
+
+    button,
+    input[type="email"],
+    input[type="password"] {
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin-top: 120px;
+        padding: 10px;
+    }
+
+    .container h2 {
+        font-size: 18px;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 10px;
+    }
+
+    header img.logo {
+        width: 60px;
+        height: 50px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+}

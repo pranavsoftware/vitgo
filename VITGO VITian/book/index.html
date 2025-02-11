@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITGO|Booking</title>
+    <link rel="icon" href="../assets/logo (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="../book/styles.css">
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"
+        integrity="sha512-r6rDA7W6ZeQhvl8S7yRVQUKVHdexq+GAlNkNNqVC7YyIV+NwqCTJe2hDWCiffTyRNOeGEzRRJ9ifvRm/HCzGYg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="../book/scripts.js" defer></script> <!-- Load your JS file -->
+    <script type="module" src="../dashboard/location tracker.js"></script>
+    <style>
+        /* Pop-up modal styles */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #popup-content {
+            background: white;
+            padding: 20px;
+            max-width: 400px;
+            width: 80%;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        #popup-content h2 {
+            margin-top: 0;
+        }
+
+        #close-popup {
+            margin-top: 20px;
+            padding: 8px 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #close-popup:hover {
+            background-color: #555;
+        }
+    </style>
+
+    <script>
+        // JavaScript to display the pop-up on page load and close it
+        document.addEventListener("DOMContentLoaded", function () {
+            const popup = document.getElementById("popup");
+            const closePopupButton = document.getElementById("close-popup");
+
+            // Show the pop-up when the page loads
+            popup.style.display = "flex";
+
+            // Close the pop-up when the close button is clicked
+            closePopupButton.addEventListener("click", function () {
+                popup.style.display = "none";
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Pop-up Modal -->
+    <div id="popup">
+        <div id="popup-content">
+            <h2>Welcome to VITGO!</h2>
+            <p>Dear VITian,
+                Please ensure that all details provided during booking are accurate. Once submitted, incorrect details cannot be edited.
+                
+                Thank you for your cooperation.</p>
+            <button id="close-popup">Close</button>
+        </div>
+    </div>
+
+    <header>
+        <img src="../assets/logo (1).png" alt="VITGO" class="logo">
+        <h1>VITGO</h1>
+        <div id="user-section">
+            <span id="username"></span>
+            <li><a href="../dashboard/index.html">Go Back</a></li>
+        </div>
+    </header>
+
+    <main>
+        <section id="current-booking">
+            <h2>Your Current Booking</h2>
+            <!-- Current booking details will be displayed here -->
+        </section>
+
+        <section>
+            <h2>Book a Taxi</h2>
+            <form id="booking-form">
+                <label for="car">Select Car:</label>
+                <select id="car" required>
+                    <option value="Tata Zest">Tata Zest</option>
+                    <option value="Dzire">Dzire</option>
+                    <option value="Innova">Innova</option>
+                </select>
+                <label for="noOfStudents">Number of Students:</label>
+                <input type="number" id="noOfStudents" required min="1">
+                <label for="from">From:</label>
+                <select id="from" required>
+                    <option value="Select">Select</option>
+                    <option value="VIT Vellore">VIT Vellore</option>
+                    <option value="Katpadi">Katpadi</option>
+                    <option value="Chennai Airport">Chennai Airport</option>
+                    <option value="Banglore Airport">Banglore Airport</option>
+                </select>
+                <label for="to">To:</label>
+                <select id="to" required>
+                    <option value="Select">Select</option>
+                    <option value="VIT Vellore">VIT Vellore</option>
+                    <option value="Katpadi">Katpadi</option>
+                    <option value="Chennai Airport">Chennai Airport</option>
+                    <option value="Banglore Airport">Banglore Airport</option>
+                </select>
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+                <label for="time">Time:</label>
+                <input type="time" id="time" required>
+                <label for="paymentMode">Payment Mode:</label>
+                <select id="paymentMode" required>
+                    <option value="Cash">Cash</option>
+                    <option value="Card">Card</option>
+                </select>
+                <label for="message">Message:</label>
+                <textarea id="message"></textarea>
+                <button type="submit">Book Taxi</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Driver Details</h2>
+            <input type="text" id="bookingIdInput" placeholder="Enter Booking ID">
+            <button id="viewDriverDetailsBtn">View Driver Details</button>
+            <div id="driver-info"></div>
+        </section>
+
+        <section>
+            <h2>QR Code Scanner</h2>
+            <div id="reader" style="width: 90%; max-width: 300px; margin: auto;"></div>
+            <button id="startScanBtn" style="margin-top: 10px;">Start Scan</button>
+            <button id="stopScanBtn" style="margin-top: 10px; display: none;">Stop Scan</button>
+            <div id="scan-result" style="margin-top: 20px;">
+                <!-- Driver details section after scanning -->
+                <div id="driver-info" style="display: none; text-align: center;">
+                    <img id="driver-profile-pic" src="" alt="Driver Profile Picture" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 10px;" />
+                    <h4 id="driver-name" style="font-size: 18px; margin: 5px 0;">Driver Name</h4>
+                    <p id="driver-email" style="font-size: 14px; color: #555;">Driver Email</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://www.instagram.com/easy_cab24.7?igsh=bmxvcDZzcDdoMGFi">Instagram</a> | <a
+                    href="https://www.linkedin.com/company/easycab-24-7/?viewAsMember=true">LinkedIn</a>
+            </div>
+            <p>&copy; 2025 VITOG. Rights Reserved.</p>
+        </footer>
+        
+    </main>
+</body>
+
+</html>
