@@ -1,0 +1,27 @@
+{
+  "name": "Easycab",
+  "short_name": "Easycab",
+  "description": "EasyCab is a Web-App that helps VITians to book a taxi and find a Partner to travel",
+  "start_url": "../intro/VITian.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007BFF",
+  "icons": [
+    {
+      "src": "../assets/web app 192 logo.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "../assets/logo (1).png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "../assets/logo (1).png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "gcm_sender_id": "621065707054"
+}
